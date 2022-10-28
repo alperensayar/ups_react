@@ -1,4 +1,3 @@
-
 from re import S
 import streamlit as st
 import pandas as pd
@@ -17,10 +16,9 @@ def main():
         }
     spectra = st.file_uploader("upload file", type={"csv", "txt"})
     
-    video= open("C:/Users/apache/Desktop/squirrel_animal_rodent_fur_cute_701.mp4","rb")
-    video=st.video(video)
+    url = st.text_input("URL Youtube Video", "https://youtu.be/c9k8K1eII4g")
         
-    event = st_player(video, **options)
+    event = st_player(url, **options, key="youtube_player")
         #xc=event.data["playedSeconds"]*100
         #xc=event.data["playedSeconds"]
         
